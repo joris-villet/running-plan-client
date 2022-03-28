@@ -5,6 +5,40 @@ body
   background-position-x: 300px
   overflow: hidden
 
+.switch-form 
+  color: #ffa84c
+  font-weight: bold
+  position: absolute
+  bottom: 4rem
+  left: 50%
+  transform: translateX(-50%)
+  cursor: pointer
+  padding: 2rem
+
+
+/****************** TRANSITION FORM ***************************/
+.slideUp-enter-active
+  animation: .8s ease-in-out slideUp
+
+@keyframes slideUp 
+  from
+    top: 60%
+    opacity: 0
+  to
+    top: 50%
+    opacity: 1
+
+.slideUp-leave-active
+  animation: .5s ease-in-out slideLeave
+
+
+@keyframes slideLeave
+  from
+    top: 50%
+  to
+    top: 60%
+    opacity: 0
+
 
 
 

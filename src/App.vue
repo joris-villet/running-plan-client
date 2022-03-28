@@ -13,7 +13,14 @@ export default {
 
     <Header />
 
-    <RouterView />
+    <router-view v-slot="{ Component, route }">
+      <transition :name="route.meta.transition">
+        <component :is="Component" />
+      </transition>
+    </router-view>
+
+    <router-link v-if="$route.name == 'LoginView'" to="/signup" class="switch-form">S'inscrire</router-link>
+    <router-link v-else to="/login" class="switch-form">Se connecter</router-link>
 
   </Overlay>
 </template>

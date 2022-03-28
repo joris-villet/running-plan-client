@@ -4,4 +4,69 @@ body {
   background-position-x: 300px;
   overflow: hidden;
 }
+
+.switch-form {
+  color: #ffa84c;
+  font-weight: bold;
+  position: absolute;
+  bottom: 4rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  cursor: pointer;
+  padding: 2rem;
+}
+
+/****************** TRANSITION FORM ***************************/
+.slideUp-enter-active {
+  -webkit-animation: .8s ease-in-out slideUp;
+          animation: .8s ease-in-out slideUp;
+}
+
+@-webkit-keyframes slideUp {
+  from {
+    top: 60%;
+    opacity: 0;
+  }
+  to {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    top: 60%;
+    opacity: 0;
+  }
+  to {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+.slideUp-leave-active {
+  -webkit-animation: .5s ease-in-out slideLeave;
+          animation: .5s ease-in-out slideLeave;
+}
+
+@-webkit-keyframes slideLeave {
+  from {
+    top: 50%;
+  }
+  to {
+    top: 60%;
+    opacity: 0;
+  }
+}
+
+@keyframes slideLeave {
+  from {
+    top: 50%;
+  }
+  to {
+    top: 60%;
+    opacity: 0;
+  }
+}
 /*# sourceMappingURL=main.css.map */

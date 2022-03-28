@@ -9,7 +9,7 @@ export default {
 
 <template>
   <header>
-    <Title class="title" h1="true" title="Running Plan" />
+    <Title h1 class="title" title="Running Plan" />
   </header>
 </template>
 
