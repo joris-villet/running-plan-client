@@ -1,24 +1,24 @@
 {
   "events": [
-    { 
+    {
       "id": 1,
       "date": "22/05/2022",
       "time": "1h",
-      "trainingType": "vélo",
+      "trainingType": "vélo ",
       "weight": 75
     },
-    { 
+    {
       "id": 2,
       "date": "24/05/2022",
       "time": "1h",
-      "trainingType": "footing",
-      "weight": 75
+      "trainingType": "compétition",
+      "weight": "90"
     },
-    { 
+    {
       "id": 3,
-      "date": "30/03/2022",
+      "date": "2022-03-25",
       "time": "3h",
-      "trainingType": "récup",
+      "trainingType": "marathon",
       "weight": 70
     }
   ]
