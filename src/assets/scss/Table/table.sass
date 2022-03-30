@@ -2,6 +2,26 @@
   width: 100%
   height: min-content
 
+  &__modal
+    display: grid
+    grid-template-columns: 20% 10% 1fr 10%
+    align-items: center
+    column-gap: 2px
+    position: relative
+    text-align: center
+    border-bottom: 1px solid rgb(18, 153, 153)
+    z-index: 0
+    // transform: translateY(0)
+
+  &__thead 
+    background: rgb(18, 153, 153)
+    padding: .3rem 0
+    border-right: 1px solid black
+
+    &__td
+      color: #fff
+      font-weight: bold
+
   &__row
     display: grid
     grid-template-columns: 20% 10% 1fr 10%
@@ -10,16 +30,10 @@
     position: relative
     text-align: center
     border-bottom: 1px solid rgb(18, 153, 153)
+    z-index: 1
 
-    &__thead 
-      background: rgb(18, 153, 153)
-      padding: .3rem 0
-      border-right: 1px solid black
-
-      td
-        color: #fff
-        font-weight: bold
-
+  &__tbody
+    
     &__td
       color: #90ffff
 
@@ -35,7 +49,28 @@
       z-index: 2
 
 
+/****************** TRANSITION FORM ***************************/
+.slideDown-enter-active
+  animation: .2s ease slideDown
+
+@keyframes slideDown 
+  from
+    opacity: 0
+    transform: translateY(-25px)
+  to
+    transform: translateY(0)
+    opacity: 1
+
+// .slideUp-leave-active
+//   animation: .5s ease-in-out slideLeave
+
+
+// @keyframes slideLeave
+//   from
+//     top: 50%
+//   to
+//     top: 60%
+//     opacity: 0
+
       
-.fas .fa-edit
-  color: red
 

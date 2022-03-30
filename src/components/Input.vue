@@ -7,6 +7,10 @@ export default {
       type: String,
       required: true,
     },
+    value: {
+      type: String,
+      required: false,
+    },
     placeholder: {
       type: String,
       required: false,
@@ -26,6 +30,6 @@ export default {
 
 <template>
   <label :class="classLabel">
-    <input :class="classInput" :type="type" :placeholder="placeholder">
+    <input :class="classInput" :type="type" :value="value" :placeholder="placeholder">
   </label>
 </template>

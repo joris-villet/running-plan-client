@@ -1,0 +1,29 @@
+.modal__icon {
+  color: #00ff70;
+  position: absolute;
+  left: -1rem;
+  cursor: pointer;
+}
+
+.modal__td {
+  text-align: center;
+  width: 100%;
+  outline: none;
+  background: #293738;
+  color: #c1ecff;
+  border: 1px solid grey;
+  border-top: none;
+  border-bottom: none;
+  padding: 0;
+}
+
+.modal__td__input {
+  background: transparent;
+  padding: 0;
+  border: none;
+  width: 100%;
+  outline: none;
+  text-align: center;
+  color: #c1ecff;
+}
+/*# sourceMappingURL=modal.css.map */

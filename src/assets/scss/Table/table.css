@@ -5,6 +5,33 @@
   height: min-content;
 }
 
+.table__modal {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20% 10% 1fr 10%;
+      grid-template-columns: 20% 10% 1fr 10%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 2px;
+          column-gap: 2px;
+  position: relative;
+  text-align: center;
+  border-bottom: 1px solid #129999;
+  z-index: 0;
+}
+
+.table__thead {
+  background: #129999;
+  padding: .3rem 0;
+  border-right: 1px solid black;
+}
+
+.table__thead__td {
+  color: #fff;
+  font-weight: bold;
+}
+
 .table__row {
   display: -ms-grid;
   display: grid;
@@ -18,28 +45,18 @@
   position: relative;
   text-align: center;
   border-bottom: 1px solid #129999;
+  z-index: 1;
 }
 
-.table__row__thead {
-  background: #129999;
-  padding: .3rem 0;
-  border-right: 1px solid black;
-}
-
-.table__row__thead td {
-  color: #fff;
-  font-weight: bold;
-}
-
-.table__row__td {
+.table__tbody__td {
   color: #90ffff;
 }
 
-.table__row__td:last-child {
+.table__tbody__td:last-child {
   border-right: 0px;
 }
 
-.table__row__icon {
+.table__tbody__icon {
   color: #90ffff;
   position: absolute;
   left: 0rem;
@@ -48,7 +65,35 @@
   z-index: 2;
 }
 
-.fas .fa-edit {
-  color: red;
+/****************** TRANSITION FORM ***************************/
+.slideDown-enter-active {
+  -webkit-animation: .2s ease slideDown;
+          animation: .2s ease slideDown;
+}
+
+@-webkit-keyframes slideDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-25px);
+            transform: translateY(-25px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-25px);
+            transform: translateY(-25px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=table.css.map */

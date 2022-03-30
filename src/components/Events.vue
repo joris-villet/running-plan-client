@@ -1,8 +1,7 @@
 <script>
 
-
 export default {
-  name: 'TableRow',
+  name: 'Events',
   props: {
     date: String,
     time: String,
@@ -10,22 +9,26 @@ export default {
     weight: [String, Number],
     classTd: {
       type: String,
-      required: false,
+      required: false
     }
   },
+  setup() {
+
+  }
 }
 </script>
 
 <template>
-  <tr>
-    <slot></slot>
-    <td :class="classTd">{{ date }}</td>
-    <td :class="classTd">{{ time }}</td>
-    <td :class="classTd">{{ trainingType }}</td>
-    <td :class="classTd">{{ weight }}</td>
-  </tr>
+  <slot></slot>
+  <td :class="classTd">{{ date }}</td>
+  <td :class="classTd">{{ time }}</td>
+  <td :class="classTd">{{ trainingType }}</td>
+  <td :class="classTd">{{ weight }}</td>
 </template>
 
 <style>
 @import '@/assets/scss/TableRow/tablerow.css'; 
 </style>
+
+
+

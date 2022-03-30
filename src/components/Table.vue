@@ -1,11 +1,14 @@
 <script>
-import TableRow from '@/components/TableRow.vue'
+import Events from '@/components/Events.vue'
+import Modal from '@/components/Modal.vue'
+
 import { reactive } from 'vue'
 
 export default {
   name: 'Table',
-  components: { TableRow },
+  components: { Events, Modal },
   setup() {
+
     const locals = reactive({
       events: [
         { 
@@ -29,11 +32,22 @@ export default {
           trainingType: "footing",
           weight: 75
         },
-      ]
+      ],
+      modalActive: false
     })
 
+    const editEvent = (event) => {
+      locals.modalActive = true;
+      console.log(event.id)
+      console.log(event.date)
+      console.log(event.time)
+      console.log(event.trainingType)
+      console.log(event.weight)
+    }
+
     return {
-      locals
+      locals,
+      editEvent
     }
   }
 }
@@ -41,29 +55,39 @@ export default {
 
 <template>
   <table class="table">
-    <thead>
-      <TableRow
-        class="table__row table__row__thead"
-        classTd="table__row__td"
-        date="Date"
-        time="Temps"
-        training-type="Type d'entrainements"
-        weight="Poids"
-      />
+    <thead class="table__thead">
+
+      <tr class="table__row">
+        <td class="table__thead__td">Date</td>
+        <td class="table__thead__td">Temps</td>
+        <td class="table__thead__td">Type d'entrainements</td>
+        <td class="table__thead__td">Poids</td>
+      </tr>
+
     </thead>
-    <tbody>
-      <TableRow
-        class="table__row"
-        classTd="table__row__td"
-        v-for="event in locals.events" 
-        :key="event.id"
-        :date="event.date"
-        :time="event.time"
-        :trainingType="event.trainingType"
-        :weight="event.weight == null ? '/' : event.weight + ' kg'"
-      >
-        <i class="table__row__icon fas fa-edit"></i>
-      </TableRow>
+    <tbody class="table__tbody">
+
+      <tr class="table__row" v-for="event in locals.events" :key="event.id">
+        <Events
+          classTd="table__tbody__td"
+          :date="event.date"
+          :time="event.time"
+          :trainingType="event.trainingType"
+          :weight="event.weight == null ? '/' : event.weight + ' kg'"
+        >
+          <i @click="editEvent(event)" class="table__tbody__icon fas fa-edit"></i>
+        </Events>
+      </tr>
+
+      <Transition name="slideDown">
+        <tr v-if="locals.modalActive" class="table__modal">
+          <Modal
+          >
+            <i class="modal__icon far fa-check-square"></i>
+          </Modal>
+        </tr>
+      </Transition>
+
     </tbody>
   </table>
 </template>
@@ -71,3 +95,5 @@ export default {
 <style>
 @import '@/assets/scss/Table/table.css'; 
 </style>
+
+
