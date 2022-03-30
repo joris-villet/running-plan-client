@@ -20,7 +20,7 @@ export default {
     </router-view>
 
     <router-link v-if="$route.name == 'LoginView'" to="/signup" class="switch-form">S'inscrire</router-link>
-    <router-link v-else to="/login" class="switch-form">Se connecter</router-link>
+    <router-link v-else-if="$route.name == 'SignupView'" to="/login" class="switch-form">Se connecter</router-link>
 
   </Overlay>
 </template>

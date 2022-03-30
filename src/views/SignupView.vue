@@ -25,7 +25,7 @@ export default {
     <Input classLabel="signup__form__label" classInput="signup__form__input" type="text" placeholder="Email" />
     <Input classLabel="signup__form__label" classInput="signup__form__input" type="password" placeholder="Mot de passe" />
     <Input classLabel="signup__form__label" classInput="signup__form__input" type="password" placeholder="Confirmez le mot de passe" />
-    <Button class="signup__form__btn" @click.prevent="handleForm" value="Se connecter" />
+    <Button class="signup__form__btn" @click.prevent="handleForm" value="S'inscrire" />
   </form>
 </template>
 

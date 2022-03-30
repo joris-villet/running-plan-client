@@ -1,0 +1,45 @@
+.sidebar {
+  width: 100%;
+  padding: 2rem;
+  border: 1px solid #129999;
+  background: #293738;
+  -webkit-box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.sidebar__form__title {
+  text-align: center;
+  margin: 1rem auto;
+  font-size: 1.1rem;
+  color: #c1eceb;
+}
+
+.sidebar__form__input {
+  border: none;
+  padding: .5rem 0 .5rem 0;
+  display: block;
+  width: 100%;
+  margin: .5rem auto;
+  outline: none;
+  font-weight: bold;
+  font-style: italic;
+  background: transparent;
+  border-bottom: 1px solid #129999;
+  color: #c1eceb;
+}
+
+.sidebar__form__btn {
+  min-width: 100%;
+  padding: .5rem 0;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin: 2rem auto;
+  background: #129999;
+  cursor: pointer;
+  font-weight: bold;
+  -webkit-box-shadow: 2px 2px 2px #242424;
+          box-shadow: 2px 2px 2px #242424;
+}
+/*# sourceMappingURL=sidebar.css.map */

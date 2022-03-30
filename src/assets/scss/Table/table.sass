@@ -1,0 +1,41 @@
+.table
+  width: 100%
+  height: min-content
+
+  &__row
+    display: grid
+    grid-template-columns: 20% 10% 1fr 10%
+    align-items: center
+    column-gap: 2px
+    position: relative
+    text-align: center
+    border-bottom: 1px solid rgb(18, 153, 153)
+
+    &__thead 
+      background: rgb(18, 153, 153)
+      padding: .3rem 0
+      border-right: 1px solid black
+
+      td
+        color: #fff
+        font-weight: bold
+
+    &__td
+      color: #90ffff
+
+    &__td:last-child
+      border-right: 0px
+
+    &__icon
+      color:#90ffff
+      position: absolute
+      left: 0rem
+      line-height: 1.3rem
+      cursor: pointer
+      z-index: 2
+
+
+      
+.fas .fa-edit
+  color: red
+

@@ -1,0 +1,54 @@
+.table {
+  width: 100%;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+}
+
+.table__row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20% 10% 1fr 10%;
+      grid-template-columns: 20% 10% 1fr 10%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 2px;
+          column-gap: 2px;
+  position: relative;
+  text-align: center;
+  border-bottom: 1px solid #129999;
+}
+
+.table__row__thead {
+  background: #129999;
+  padding: .3rem 0;
+  border-right: 1px solid black;
+}
+
+.table__row__thead td {
+  color: #fff;
+  font-weight: bold;
+}
+
+.table__row__td {
+  color: #90ffff;
+}
+
+.table__row__td:last-child {
+  border-right: 0px;
+}
+
+.table__row__icon {
+  color: #90ffff;
+  position: absolute;
+  left: 0rem;
+  line-height: 1.3rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.fas .fa-edit {
+  color: red;
+}
+/*# sourceMappingURL=table.css.map */
