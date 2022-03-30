@@ -1,8 +1,8 @@
 <script>
 import Events from '@/components/Events.vue'
 import Modal from '@/components/Modal.vue'
-
-import { reactive } from 'vue'
+import { useEventStore } from '@/stores/event'
+import { reactive, ref } from 'vue'
 
 export default {
   name: 'Table',
@@ -10,44 +10,48 @@ export default {
   setup() {
 
     const locals = reactive({
-      events: [
-        { 
-          id: 1,
-          date: "22/05/2022",
-          time: "1h",
-          trainingType: "footing",
-          weight: 75
-        },
-        { 
-          id: 2,
-          date: "22/05/2022",
-          time: "1h",
-          trainingType: "footing",
-          weight: 75
-        },
-        { 
-          id: 3,
-          date: "22/05/2022",
-          time: "1h",
-          trainingType: "footing",
-          weight: 75
-        },
-      ],
-      modalActive: false
+      modalActive: false,
     })
+
+    const eventStore = useEventStore();
 
     const editEvent = (event) => {
       locals.modalActive = true;
-      console.log(event.id)
-      console.log(event.date)
-      console.log(event.time)
-      console.log(event.trainingType)
-      console.log(event.weight)
+      eventStore.date = event.date;
+      eventStore.time = event.time;
+      eventStore.trainingType = event.trainingType;
+      eventStore.weight = event.weight;
+    }
+
+    const updateEvent = () => {
+      locals.modalActive = false;
+
+      console.log(new Date(eventStore.date))
+      console.log(eventStore.time)
+      console.log(eventStore.trainingType)
+      console.log(eventStore.weight)
+
+      // const formData = {
+      //   date: new Date(eventStore.date),
+      //   time: eventStore.time,
+      //   trainingType: eventStore.trainingType,
+      //   weight: eventStore.weight
+      // }
+
+      // axios.put(`${state.baseUrl}/event/${state.eventIdUpdated}`, formdata)
+      //   .then(res => {
+      //     console.log(res);
+      //     this.dispatch('getEvents')
+      //   })
+      //   .catch(err => console.log(err))
+
     }
 
     return {
       locals,
-      editEvent
+      eventStore,
+      editEvent,
+      updateEvent,
     }
   }
 }
@@ -67,7 +71,7 @@ export default {
     </thead>
     <tbody class="table__tbody">
 
-      <tr class="table__row" v-for="event in locals.events" :key="event.id">
+      <tr class="table__row" v-for="event in eventStore.events" :key="event.id">
         <Events
           classTd="table__tbody__td"
           :date="event.date"
@@ -79,16 +83,24 @@ export default {
         </Events>
       </tr>
 
-      <Transition name="slideDown">
+      <Transition>
         <tr v-if="locals.modalActive" class="table__modal">
           <Modal
+            v-model:time="eventStore.time"
+            v-model:date="eventStore.date"
+            v-model:trainingType="eventStore.trainingType"
+            v-model:weight="eventStore.weight"
+            :date="eventStore.date"
+            :time="eventStore.time"
+            :trainingType="eventStore.trainingType"
+            :weight="eventStore.weight == null ? '/' : eventStore.weight + ' kg'"
           >
-            <i class="modal__icon far fa-check-square"></i>
+            <i @click="updateEvent" class="modal__icon far fa-check-square"></i>
           </Modal>
         </tr>
       </Transition>
-
     </tbody>
+
   </table>
 </template>
 

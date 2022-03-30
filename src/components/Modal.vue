@@ -1,5 +1,6 @@
 <script>
-import { reactive } from 'vue'
+import { useEventStore } from '@/stores/event'
+import { ref } from 'vue'
 
 export default {
   name: 'Modal',
@@ -12,6 +13,16 @@ export default {
   },
   setup() {
 
+    const eventStore = useEventStore();
+    const inputType = ref('text');
+    console.log(inputType.value)
+    const changeType = () => inputType.value = 'date';
+   
+    return { 
+      eventStore,
+      inputType,
+      changeType
+    }
   }
 }
 </script>
@@ -22,8 +33,10 @@ export default {
     <label>
       <input 
         class="modal__td__input" 
-        type="text" 
-    
+        :type="inputType"
+        :value="date"
+        @input="$emit('update:date', $event.target.value)"
+        @focus="changeType"
       >
     </label>
   </td>
@@ -32,6 +45,8 @@ export default {
       <input
         class="modal__td__input" 
         type="text"
+        :value="time"
+        @input="$emit('update:time', $event.target.value)"
       >
     </label>
   </td>
@@ -40,6 +55,8 @@ export default {
       <input 
         class="modal__td__input" 
         type="text"
+        :value="trainingType"
+        @input="$emit('update:trainingType', $event.target.value)"
       >
     </label>
   </td>
@@ -48,6 +65,8 @@ export default {
       <input 
         class="modal__td__input" 
         type="text"
+        :value="weight"
+        @input="$emit('update:weight', $event.target.value)"
       >
     </label>
   </td>
