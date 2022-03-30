@@ -50,9 +50,9 @@
 
 /****************** TRANSITION FORM ***************************/
 .v-enter-active
-  animation: .2s ease slideDown
+  animation: .2s ease slideModalUp
 
-@keyframes slideDown 
+@keyframes slideModalUp 
   from
     opacity: 0
     transform: translateY(-25px)
@@ -61,9 +61,9 @@
     opacity: 1
 
 .v-leave-active
-  animation: .2s ease slideUp
+  animation: .2s ease slideModalDown
 
-@keyframes slideUp
+@keyframes slideModalDown
   from
     transform: translateY(0)
     opacity: 1
