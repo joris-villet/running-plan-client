@@ -1,0 +1,25 @@
+{
+  "events": [
+    { 
+      "id": 1,
+      "date": "22/05/2022",
+      "time": "1h",
+      "trainingType": "vélo",
+      "weight": 75
+    },
+    { 
+      "id": 2,
+      "date": "24/05/2022",
+      "time": "1h",
+      "trainingType": "footing",
+      "weight": 75
+    },
+    { 
+      "id": 3,
+      "date": "30/03/2022",
+      "time": "3h",
+      "trainingType": "récup",
+      "weight": 70
+    }
+  ]
+}

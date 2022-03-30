@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import axios from 'axios'
 
 export const useEventStore = defineStore({
   id: 'event',
@@ -7,28 +8,17 @@ export const useEventStore = defineStore({
     time: '',
     trainingType: '',
     weight: '',
-    events: [
-      { 
-        id: 1,
-        date: "22/05/2022",
-        time: "1h",
-        trainingType: "vélo",
-        weight: 75
-      },
-      { 
-        id: 2,
-        date: "27/05/2022",
-        time: "4h",
-        trainingType: "footing",
-        weight: 70
-      },
-      { 
-        id: 3,
-        date: "30/05/2022",
-        time: "2h",
-        trainingType: "compétition",
-        weight: 75
-      },
-    ],
+    events: []
   }),
+  actions: { 
+    async getEvents() {
+      try {
+        const { data } = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/events`)
+        console.log(data);
+        this.events = data;
+      } catch(err) {
+        console.log(err)
+      }
+    }
+  }
 })

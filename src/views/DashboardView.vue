@@ -1,16 +1,18 @@
 <script>
 import Sidebar from '@/components/Sidebar.vue'
 import Table from '@/components/Table.vue'
+import { useEventStore } from '@/stores/event.js'
 
 export default {
   name: 'DashboardView',
   components: { Sidebar, Table },
 
-  setup() {
+  mounted() {
+    const eventStore = useEventStore();
+    eventStore.getEvents()
+  },
 
-    return {
-    
-    }
+  setup() {
 
   }
 
@@ -18,15 +20,10 @@ export default {
 </script>
 
 <template>
-
   <section class="dashboard">
-
     <Sidebar />
-
     <Table />
-
   </section>
-
 </template>
 
 <style>
