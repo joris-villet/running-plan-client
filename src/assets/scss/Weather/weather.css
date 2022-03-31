@@ -1,0 +1,25 @@
+.weather {
+  color: #c1eceb;
+}
+
+.weather__name {
+  text-align: center;
+}
+
+.weather__icon {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.weather__description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=weather.css.map */

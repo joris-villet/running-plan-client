@@ -2,10 +2,12 @@
 import Title from '@/components/Title.vue'
 import { reactive } from 'vue'
 import { useEventStore } from '@/stores/event.js'
+import Health from '@/components/health.vue'
+import Weather from '@/components/weather.vue'
 
 export default {
   name: 'Sidebar',
-  components: { Title },
+  components: { Title, Health, Weather },
 
   setup() {
 
@@ -41,8 +43,8 @@ export default {
 
 <template>
   <aside class="sidebar">
-    <div>ici Health</div>
-    <div>ici weather</div>
+    <Health />
+    <Weather />
     <form class="sidebar__form">
       <Title h2 class="sidebar__form__title" title="Ajouter un évenement" />
       <label class="sidebar__form__label">

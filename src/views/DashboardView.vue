@@ -2,6 +2,7 @@
 import Sidebar from '@/components/Sidebar.vue'
 import Table from '@/components/Table.vue'
 import { useEventStore } from '@/stores/event.js'
+import { useWeatherStore } from '@/stores/weather.js'
 
 export default {
   name: 'DashboardView',
@@ -9,12 +10,10 @@ export default {
 
   mounted() {
     const eventStore = useEventStore();
-    eventStore.getEvents()
+    const weatherStore = useWeatherStore();
+    eventStore.getEvents();
+    weatherStore.getWeather();
   },
-
-  setup() {
-
-  }
 
 }
 </script>
