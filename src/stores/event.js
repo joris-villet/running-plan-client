@@ -12,6 +12,7 @@ export const useEventStore = defineStore({
     events: []
   }),
   actions: { 
+
     async getEvents() {
       try {
         const { data } = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/events`)
@@ -21,6 +22,7 @@ export const useEventStore = defineStore({
         console.log(err)
       }
     },
+
     async updateEvent() {
       try {
         const formData = {
@@ -37,6 +39,18 @@ export const useEventStore = defineStore({
           this.getEvents()
         }
 
+      } catch(err) {
+        console.log(err)
+      }
+    },
+
+    async createEvent(newEvent) {
+      try {
+        const { data } = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/events`, newEvent)
+        if (data) {
+          this.getEvents()
+        }
+        console.log(data);
       } catch(err) {
         console.log(err)
       }

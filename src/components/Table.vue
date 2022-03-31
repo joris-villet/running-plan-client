@@ -51,7 +51,7 @@ export default {
           :date="event.date"
           :time="event.time"
           :trainingType="event.trainingType"
-          :weight="event.weight == null ? '/' : event.weight + ' kg'"
+          :weight="event.weight === '' ? '/' : event.weight + ' kg'"
         >
           <i @click="openModal(event)" class="table__tbody__icon fas fa-edit"></i>
         </Events>

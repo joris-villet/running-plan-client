@@ -4,8 +4,8 @@
       "id": 1,
       "date": "22/05/2022",
       "time": "1h",
-      "trainingType": "vélo ",
-      "weight": 75
+      "trainingType": "récup",
+      "weight": ""
     },
     {
       "id": 2,
@@ -19,6 +19,34 @@
       "date": "2022-03-25",
       "time": "3h",
       "trainingType": "marathon",
+      "weight": 70
+    },
+    {
+      "id": 4,
+      "date": "2022-03-31",
+      "time": "2h",
+      "trainingType": "footing",
+      "weight": "79"
+    },
+    {
+      "id": 5,
+      "date": "2022-03-30",
+      "time": "1h",
+      "trainingType": "footing",
+      "weight": "60"
+    },
+    {
+      "date": "2022-03-31",
+      "time": "thh",
+      "trainingType": "thth",
+      "weight": 90,
+      "id": 6
+    },
+    {
+      "id": 7,
+      "date": "2022-03-24",
+      "time": "0h",
+      "trainingType": "hahahahah j'ai rien branlé",
       "weight": 70
     }
   ]
