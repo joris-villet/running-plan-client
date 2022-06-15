@@ -4,7 +4,6 @@ import Header from '@/components/Header.vue'
 
 export default {
   components: { Overlay, Header }
-
 }
 </script>
 

@@ -1,6 +1,7 @@
 <script>
 
 export default {
+  // emits: ['update-merde'],
   name: 'Input',
   props: {
     type: {
@@ -30,6 +31,6 @@ export default {
 
 <template>
   <label :class="classLabel">
-    <input :class="classInput" :type="type" :value="value" :placeholder="placeholder">
+    <input @input="$emit('update', $event.target.value)" :class="classInput" :type="type" :value="value" :placeholder="placeholder">
   </label>
 </template>

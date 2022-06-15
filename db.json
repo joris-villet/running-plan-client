@@ -36,11 +36,11 @@
       "weight": "60"
     },
     {
-      "date": "2022-03-31",
-      "time": "thh",
-      "trainingType": "thth",
-      "weight": 90,
-      "id": 6
+      "id": 6,
+      "date": "2022-03-23",
+      "time": "3 heures",
+      "trainingType": "course à pied",
+      "weight": 90
     },
     {
       "id": 7,
@@ -48,6 +48,13 @@
       "time": "1h",
       "trainingType": "hahahahah ",
       "weight": 70
+    },
+    {
+      "id": 8,
+      "date": "2022-04-21",
+      "time": "1h",
+      "trainingType": "footing",
+      "weight": "77"
     }
   ]
 }

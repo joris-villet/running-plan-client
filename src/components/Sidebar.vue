@@ -2,8 +2,8 @@
 import Title from '@/components/Title.vue'
 import { reactive } from 'vue'
 import { useEventStore } from '@/stores/event.js'
-import Health from '@/components/health.vue'
-import Weather from '@/components/weather.vue'
+import Health from '@/components/Health.vue'
+import Weather from '@/components/Weather.vue'
 
 export default {
   name: 'Sidebar',
@@ -22,11 +22,16 @@ export default {
 
     const handleForm = () => {
       locals.weight = parseInt(locals.weight, 10)
-      eventStore.createEvent(locals);
-      locals.date = "";
-      locals.time = "";
-      locals.trainingType = "";
-      locals.weight = "";
+
+      locals.date === '' ||
+      locals.trainingType === '' ||
+      locals.time === '' ||
+      locals.weight === ''; return
+      //eventStore.createEvent(locals);
+      // locals.date = "";
+      // locals.time = "";
+      // locals.trainingType = "";
+      // locals.weight = "";
     }
 
     return {
